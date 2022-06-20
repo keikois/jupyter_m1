@@ -1,13 +1,14 @@
 # jupyter_m1
 m1Macでもintel Macでも起動するjupyterを起動するためのdocker-composeです。(pandas入り)
 
-(workは自動で生成されます)
+
 ```
 jupyterlab_mysql
 ├── work => （jupyterlabのコードを保存する場所)
 │           
 └── docker-compose.yml
 ```
+(workは自動で生成されます)
 ※事前にDocker desktopのインストールが必要です。
 ## ディレクトリのクローンのやり方
 ターミナルで下記を実行してください。
@@ -50,3 +51,19 @@ Gitのリモートリポジトリを確認するコマンド
 ```
 git remote -v 
 ```
+
+## CPUアーキテクチャの確認方法
+```
+uname -m 
+```
+実行結果の例）x86_64 => (IntelのCPU)
+
+#### コンテナの中に入ってCPUアーキテクチャを確認する方法
+コンテナ起動後、下記でコンテナに入る
+```
+docker exec -it datascience-notebook-container bash
+```
+```
+uname -m
+```
+これで、コンテナの中のCPUアーキテクチャを確認できます。
