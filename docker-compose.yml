@@ -1,0 +1,14 @@
+version: "3"
+services:
+  datascience-notebook:
+    container_name: datascience-notebook-container
+    # scipy-notebookの場合はjupyter/scipy-notebookになります。
+    image: jupyter/scipy-notebook
+    # コンテナの/home/jobyan/workをホストの./workで永続化
+    volumes:
+      - ./work:/home/jovyan/work
+    ports:
+      - 8888:8888
+    restart: always
+    # 今回はローカル起動用なのでログインは省略します。
+    command: start.sh jupyter lab --NotebookApp.token=''
