@@ -38,3 +38,15 @@ localhost:8888をブラウザで開くとjupyterlabが開きます。（pyhton�
 ```
 docker-compose down
 ```
+## git cloneが終ったら
+git cloneが終ったら、リモートリポジトリを削除するコマンドを使ってください。
+
+Git のリモートリポジトリを削除するコマンド
+```
+git remote rm origin 
+```
+Gitのリモートリポジトリを確認するコマンド
+- 何も書かれていないことを確認してください。
+```
+git remote -v 
+```
